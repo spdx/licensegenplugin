@@ -26,6 +26,7 @@
           <!-- Specify the licensegen parameters -->
           <schemaFile>src/test/resources/unit/valid-licenses-project/schema/ListedLicense.xsd</schemaFile>
           <sourceDirectory>src/test/resources/unit/valid-licenses-project/src</sourceDirectory>
+          <outputDirectory>src/test/resources/unit/valid-licenses-project/target</outputDirectory>
         </configuration>
       </plugin>
     </plugins>

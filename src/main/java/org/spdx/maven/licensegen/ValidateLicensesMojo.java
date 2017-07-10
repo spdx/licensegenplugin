@@ -40,7 +40,7 @@ import javax.xml.validation.Validator;
  * Goal to validate the XML files against a schema
  *
  */
-@Mojo( name = "validate", defaultPhase = LifecyclePhase.TEST )
+@Mojo( name = "validate", defaultPhase = LifecyclePhase.VALIDATE )
 public class ValidateLicensesMojo
     extends AbstractMojo
 {
@@ -55,6 +55,13 @@ public class ValidateLicensesMojo
      */
     @Parameter( defaultValue = "${project.build.sourceDirectory}", required = true )
     private File sourceDirectory;
+    
+    /**
+     * Output directory
+     */
+    @Parameter( defaultValue = "${project.build.outputDirectory}", required = true )
+    private File outputDirectory;
+    
 	/* (non-Javadoc)
 	 * @see org.apache.maven.plugin.Mojo#execute()
 	 */

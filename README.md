@@ -5,9 +5,10 @@ Maven plugin for generating the license data from the license list XML repositor
 The plugin is currently under development and is not stable.
 
 ## Goals Overview
-The licensegenplugin supports 2 goals:
-* licensegen:validate - Validates a directory containing license XML files against a license XML schema.
-* licensegen:generate - Generates license data (HTML, website, JSON, RDFa, template and text formats) from the license XML files.
+The licensegenplugin supports 3 goals:
+* licensegen:validate - Validates a directory containing license XML files against a license XML schema.  Used in the validate phase.
+* licensegen:generate - Generates license data (HTML, website, JSON, RDFa, template and text formats) from the license XML files.  Used in the compile phase.
+* licensegen:test - Test the generated license data against known licenses.  Identifies any duplicate licenses and any license text that doesn't match the known text.
 
 ## Usage
 Configure the licensegenplugin by adding the plugin to the plugins in your project's pom.xml file:
@@ -20,6 +21,7 @@ Configure the licensegenplugin by adding the plugin to the plugins in your proje
 			<configuration>
 				<schemaFile>[path to the schema file]</schemaFile>         				<sourceDirectory>[path to the dir containing license XML files]</sourceDirectory>
 				<outputDirectory>[path to the output directory]</outputDirectory>
+				<licenseListVersion>[version of the license list]</licenseListVersion>
 			</configuration>
 		</plugin>
 	</plugins>
