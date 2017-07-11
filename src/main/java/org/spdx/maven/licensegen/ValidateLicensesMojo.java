@@ -62,6 +62,9 @@ public class ValidateLicensesMojo
     @Parameter( defaultValue = "${project.build.outputDirectory}", required = true )
     private File outputDirectory;
     
+    @Parameter(required = false)
+    private File textCompare;
+    
 	/* (non-Javadoc)
 	 * @see org.apache.maven.plugin.Mojo#execute()
 	 */
@@ -115,18 +118,21 @@ public class ValidateLicensesMojo
 	 * @param dir
 	 * @param validator
 	 * @return true if all files are valid
+	 * @throws MojoExecutionException 
 	 */
-	private boolean validateDirectory(File dir, Validator validator) {
+	private boolean validateDirectory(File dir, Validator validator) throws MojoExecutionException {
 		boolean retval = true;
 		if (!dir.isDirectory()) {
-			new MojoExecutionException(dir.getName()+" is not a directory");
+			throw new MojoExecutionException(dir.getName()+" is not a directory");
 		}
 		File[] children = dir.listFiles();
-		for (File child:children) {
-			if (child.isFile() && child.getName().toLowerCase().endsWith(".xml")) {
-				retval = validateFile(child,validator) & retval;
-			} else if (child.isDirectory()) {
-				retval = validateDirectory(child, validator) & retval;
+		if (children != null) {
+			for (File child:children) {
+				if (child.isFile() && child.getName().toLowerCase().endsWith(".xml")) {
+					retval = validateFile(child,validator) & retval;
+				} else if (child.isDirectory()) {
+					retval = validateDirectory(child, validator) & retval;
+				}
 			}
 		}
 		return retval;

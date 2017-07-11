@@ -22,6 +22,7 @@ Configure the licensegenplugin by adding the plugin to the plugins in your proje
 				<schemaFile>[path to the schema file]</schemaFile>         				<sourceDirectory>[path to the dir containing license XML files]</sourceDirectory>
 				<outputDirectory>[path to the output directory]</outputDirectory>
 				<licenseListVersion>[version of the license list]</licenseListVersion>
+				<textCompare>[Directory containing the text only version of the licenses (used for testing)]</textCompare>
 			</configuration>
 		</plugin>
 	</plugins>

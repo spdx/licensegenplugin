@@ -24,10 +24,10 @@
         <artifactId>licensegen</artifactId>
         <configuration>
           <!-- Specify the licensegen parameters -->
-          <schemaFile>src/test/resources/unit/invalid-licenses-project/schema/ListedLicense.xsd</schemaFile>
-          <sourceDirectory>src/test/resources/unit/invalid-licenses-project/src</sourceDirectory>
-          <outputDirectory>src/test/resources/unit/invalid-licenses-project/target</outputDirectory>
-          <textCompare>src/test/resources/unit/invalid-licenses-project/test/license-text</textCompare>
+          <schemaFile>src/test/resources/unit/failtest-licenses-project/schema/ListedLicense.xsd</schemaFile>
+          <sourceDirectory>src/test/resources/unit/failtest-licenses-project/src</sourceDirectory>
+          <outputDirectory>src/test/resources/unit/failtest-licenses-project/target</outputDirectory>
+          <textCompare>src/test/resources/unit/failtest-licenses-project/test/license-text</textCompare>
         </configuration>
       </plugin>
     </plugins>

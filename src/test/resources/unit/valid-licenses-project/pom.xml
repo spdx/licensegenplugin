@@ -27,6 +27,7 @@
           <schemaFile>src/test/resources/unit/valid-licenses-project/schema/ListedLicense.xsd</schemaFile>
           <sourceDirectory>src/test/resources/unit/valid-licenses-project/src</sourceDirectory>
           <outputDirectory>src/test/resources/unit/valid-licenses-project/target</outputDirectory>
+          <textCompare>src/test/resources/unit/valid-licenses-project/test/license-text</textCompare>
         </configuration>
       </plugin>
     </plugins>

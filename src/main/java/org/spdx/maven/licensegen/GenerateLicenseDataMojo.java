@@ -57,6 +57,9 @@ public class GenerateLicenseDataMojo extends AbstractMojo {
     
     @Parameter(defaultValue = "${project.version}", required = false)
     private String licenseListVersion;
+    
+    @Parameter(required = false)
+    private File textCompare;
 
 	/* (non-Javadoc)
 	 * @see org.apache.maven.plugin.Mojo#execute()
