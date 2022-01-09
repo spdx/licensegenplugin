@@ -1,3 +1,6 @@
+# Archive Status
+This repository has been moved to archive status as of 9 January 2022.
+
 # licensegenplugin
 Maven plugin for generating the license data from the license list XML repository.  The plugin supports various validation functions and the creation of license data from the license-xml source.
 
